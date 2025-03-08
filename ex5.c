@@ -9,28 +9,27 @@ int main () {
     return 1;
    }
 int numeros[tam];
-int numerospares[tam];
-int numerosimpares[tam];
-int ordempares=1;
-int ordemimpares=1;
-int produtopares=0;
+int numerospares[tam],numerosimpares[tam];
+int produtopares=1;
 int somatorioimpares=0;
-int i=1;
-int j=1;
-int m=1;
-int n=1;
- while (fscanf(fp,"%d",&numeros[tam])!=EOF) {
-    if(numeros[tam]%2==0){
-            numerospares[i]=numeros[i];
-            i++;
+int i=0;
+int m=0;
+int n=0;
+ while (fscanf(fp,"%d",&numeros[i])!=EOF) {
+    if(numeros[i]%2==0){
+            numerospares[m]=numeros[i];
+            produtopares*=numerospares[m];
+            m++;
     }
     else {
-     numerosimpares[j]=numeros[j];
-     j++;
+     numerosimpares[n]=numeros[i];
+     somatorioimpares+=numerosimpares[n];
+     n++;
     }
+    i++;
  }
- printf("%d",j);
- printf("%d",i);
+ printf("O somatorio dos impares eh:%d\n",somatorioimpares);
+ printf("O produtorio dos pares eh:%d",produtopares);
 
 fclose(fp);
 
